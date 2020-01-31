@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  exporter:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/opt/osta-exporter/src:ro
+    environment:
+      - LOG_LEVEL=INFO
+      - OSTA_USER_ID
+    user: "100433:0"
