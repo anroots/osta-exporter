@@ -37,6 +37,7 @@ class OstaCollector(object):
                                       labels=['user_id', 'item_id', 'title'])
             gauge.add_metric([str(self.user_id), str(user_item.get('itemId')), slugify(user_item.get('title'))],
                              float(user_item.get('currentPriceEur')))
+            yield gauge
 
             gauge = GaugeMetricFamily("osta_item_bids", 'Number of bids for an auctioned item',
                                       labels=['user_id', 'item_id', 'title'])

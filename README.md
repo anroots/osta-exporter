@@ -26,7 +26,12 @@ scrape_configs:
 The following metrics will be saved:
 
 ```
-
+# HELP osta_item_price Price of an auctioned item
+# TYPE osta_item_price gauge
+osta_item_price{item_id="1337",title="2gb-ddr3-sodimm-malu",user_id="1337"} 3.0
+# HELP osta_item_bids Number of bids for an auctioned item
+# TYPE osta_item_bids gauge
+osta_item_bids{item_id="1337",title="2gb-ddr3-sodimm-malu",user_id="1337"} 1.0
 ```
 
 ### Environment variables
